@@ -1,0 +1,34 @@
+# ⚙️ FORZY Digital Twin - Sprint 1
+**Fundamentos do Ativo e Interface de Cadastro**
+
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io/)
+
+Este repositório contém a entrega da **Sprint 1** do Challenge FORZY, desenvolvida para a disciplina de Computação Quântica & IA da FIAP. 
+
+O objetivo desta etapa é estabelecer a fundação do **Digital Twin** da FORZY, construindo uma interface desacoplada e responsiva para o cadastro técnico de motores industriais e a simulação de recebimento de telemetria em tempo real.
+
+---
+
+## 🎯 Funcionalidades Implementadas
+
+O protótipo foi desenvolvido focando na experiência do usuário (UX), design para latência e arquitetura escalável:
+
+* 📋 **Consulta de Equipamentos:** Tabela de visão geral de todos os ativos (motores) já operantes na planta.
+* ➕ **Módulo de Cadastro Técnico:** Formulário interativo para registro de novos motores, contendo validação de campos obrigatórios (TAG, Fabricante, Modelo, Potência, Tensão) e alertas de duplicidade.
+* 📈 **Visualização de Dados Brutos:** Painel de simulação que converte sinais brutos em unidades compreensíveis de engenharia (Tensão, Corrente e RPM).
+    * *UX/UI:* Implementação de *spinners* para simular a latência de comunicação com o microcontrolador na borda (Edge).
+    * *Dashboards:* Gráficos de linha em tempo real e métricas comparativas (deltas).
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+A interface foi construída seguindo o padrão de separação de responsabilidades (Front-end Views vs. Back-end Mock/State), facilitando integrações futuras com APIs ou bancos de dados reais.
+
+* **Python 3.10+**
+* **Streamlit** (Framework reativo de Front-end)
+* **Pandas** (Manipulação de DataFrames)
+* **NumPy** (Geração de sinais sintéticos e simulação matemática)
+
+https://colab.research.google.com/drive/1KohoBtaj7i7LEKBsKiYDSL9LiV9r8L2H?usp=sharing
