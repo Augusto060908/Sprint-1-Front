@@ -1,0 +1,56 @@
+Este guia o ajudará a executar o aplicativo de Gestão de Ativos (FORZY) em sua máquina local usando a biblioteca Streamlit do Python.
+
+ 1. Pré-requisitos
+Antes de começar, você precisa ter o Python instalado no seu computador. Caso não tenha, você pode baixá-lo no site oficial: python.org.
+
+ 2. Instalação das Dependências
+O seu aplicativo utiliza três bibliotecas principais: Streamlit (para a interface), Pandas e NumPy (para manipulação de dados).
+
+Abra o seu terminal (Prompt de Comando, PowerShell ou o terminal do seu editor de código, como VS Code) e execute o seguinte comando para instalá-las:
+pip install streamlit pandas numpy
+
+3. Preparando o Arquivo
+Crie uma nova pasta no seu computador para o projeto (ex: forzy_app).
+
+Dentro dessa pasta, crie um arquivo de texto e renomeie-o para app.py.
+
+Abra o arquivo app.py no seu editor de código ou bloco de notas, cole todo o código fornecido e salve.
+
+ 4. Rodando o Aplicativo
+No seu terminal, navegue até a pasta onde você salvou o arquivo app.py e execute o comando abaixo:
+streamlit run app.py
+Após alguns segundos, o Streamlit iniciará um servidor local e abrirá o aplicativo automaticamente no seu navegador padrão (geralmente no endereço http://localhost:8501).
+
+ 5. Como Utilizar o Aplicativo (Guia de Navegação)
+O FORZY App possui um menu lateral (Sidebar) que controla a navegação e simula permissões de acesso. Aqui está o que você pode fazer em cada seção:
+
+ Simulador de Perfil (Controle de Acesso - RBAC)
+No menu esquerdo, você pode alterar o seu cargo para ver como o aplicativo reage:
+
+Gestor Global / Admin: Tem acesso irrestrito a todas as plantas, equipamentos e abas do sistema.
+
+Técnico Regional (SP): Tem seu acesso restrito apenas à "Planta São Paulo (Matriz)".
+
+Operador de Linha: Perfil operacional que perde o acesso à aba sensível de "Dados Brutos (Engenharia)".
+
+ Monitoramento Operacional
+Use os filtros para selecionar a Planta, a Área e o Equipamento desejado.
+
+Observe a Telemetria Simulada: O sistema gera valores aleatórios de Temperatura e Vibração.
+
+A Inteligência do painel classificará o status automaticamente entre NORMAL (verde), ALERTA (laranja) ou CRÍTICO (vermelho), fornecendo uma justificativa em texto.
+
+ Cadastro Técnico
+Acesse esta aba para registrar um novo ativo no sistema.
+
+Preencha os campos obrigatórios (TAG e Fabricante) e clique em Cadastrar.
+
+Nota: Como o app usa o session_state do Streamlit, os dados ficam salvos enquanto a aba do navegador estiver aberta.
+
+ Consulta de Equipamentos
+Aqui você pode visualizar uma tabela completa contendo todos os equipamentos que você inseriu na aba de "Cadastro Técnico".
+
+ Dados Brutos (Engenharia)
+Aba restrita para análises profundas.
+
+Selecione um equipamento que você cadastrou e clique em Coletar Sinais. O app simulará a captação de dados elétricos e gerará um gráfico interativo de Tensão e Corrente ao longo do tempo.
